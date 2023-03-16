@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+	<style>
+
+	</style>
+
+</head>
+<body>
+	
+		<div class="main">  	
+			<input type="checkbox" id="chk" aria-hidden="true">
+				<div class="signup">
+
+					<form onsubmit="return myFun()">
+						<h1>Sig-up page Best</h1>
+						<input type="text" id="User_Name" value="" placeholder="Username">
+						<span id="Message" style=" color: red; display: flex;justify-content: center; font-size: 16px;"></span>
+
+						<span id="x" style=" color: red; display: flex;justify-content: center; font-size: 16px;"></span>
+                         
+
+                             <!-- password section -->
+
+						<input type="text" id="password" value="" placeholder="Password">
+						<span id="Mess" style=" color: red; display: flex;justify-content: center; font-size: 16px;"></span>
+
+
+						 <!-- email section -->
+						
+						<input type="text" id="email" value="" placeholder="Email id">
+						<span id="messag" style=" color: red; display: flex;justify-content: center; font-size: 15px;"></span>
+						
+						<button type="submit" value="submit"> submit</button>
+
+
+					</form>
+
+
+					</form>
+				</div>
+	
+				<div class="login">
+					<form>
+						<label for="chk" aria-hidden="true">Login</label>
+						<input type="email" name="email" placeholder="Email" required="">
+						<input type="password" name="pswd" placeholder="Password" required="">
+						<button>Login</button>
+					</form>
+				</div>
+		</div>
+		<script>
+                  
+			function myFun(){
+				let curect = /^[A-Za-z]+$/
+				// let curr = /^[A-Za-z]+$/
+
+				let user = document.getElementById("User_Name").value ;
+                let pass = document.getElementById("password").value;
+				let email = document.getElementById("email").value;
+				
+				// console.log(x)
+
+				
+
+
+				if(user==""){
+					document.getElementById("Message").innerHTML ="Please Fill Username";
+					return false;
+				
+				}
+				
+				// document.write("suss")
+
+				if(user.length <3 ){
+                    document.getElementById("Message").innerHTML =" Please 3Char Se Upar Fill kare"
+                    return false;
+
+                }
+				if(user.length >20 ){
+                    document.getElementById("Message").innerHTML =" Username Must Be Less Than 20 che"
+                    return false;
+
+                }
+				if(user.match(curect))
+				true;
+				else{
+					document.getElementById("Message").innerHTML =" only alphabets are allowed"
+                    return false;
+				}
+
+                        						//PASSWORD//
+
+				if(pass==""){
+                    document.getElementById("Mess").innerHTML = "please fill password"
+                    return false;
+                }
+
+                if (pass.length <5) {
+                    document.getElementById("Mess").innerHTML = " password must be 5 che"
+                    return false;
+                }
+				  
+				if (pass.length >25) {
+					document.getElementById("Mess").innerHTML = " Username must be less than 25 che"
+                    return false;
+				}
+
+
+				                  // email 
+				
+				if(email==""){
+					document.getElementById("messag").innerHTML ="Please Fill Email";
+					return false;
+				}
+
+				if(email.indexOf('@')<=0){
+					document.getElementById("messag").innerHTML ="Inviled @ position";
+					return false;
+
+				}
+
+				if (email.charAt(email.length-4) !='.') {
+					document.getElementById("messag").innerHTML ="Inviled position at 4";
+					return false;
+				}
+
+				// if (email.charAt(email.length-2) !='.') {
+				// 	document.getElementById("messag").innerHTML ="Inviled position at 3";
+				// 	return false;
+				// }
+
+				else{
+					alert('your SignUp page sussesFull')
+				}
+
+
+
+				 
+q
+
+			}
+					
+				  
+
+			// function login(){
+			// 	const uname=document.getElementById('username').value
+			// 	const pass=document.getElementById('password').value
+			// 	const email=document.getElementById('email').value
+	
+			// 	if(uname=="pankaj kumar" && pass=="pk122kusi" && email=="pk0158548@gmail.com")
+			// 	{
+			// 		alert("Your are sucessFull")
+			// 		// location.assign("http://127.0.0.1:5500/about.html") //next section pe senfd link
+	
+			// 	}
+			// 	else{
+			// 		window.alert("Please_tryAgain")
+			// 	}
+	
+			// }
+
+
+
+	
+		
+		</script>
+</body>
+</html>
